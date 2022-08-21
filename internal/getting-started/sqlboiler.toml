@@ -1,0 +1,12 @@
+output   = "gen/models"
+wipe     = true
+no-tests = true
+add-enum-types = true
+
+[mysql]
+  dbname  = "db"
+  host    = "localhost"
+  port    = 3306
+  user    = "dbuser"
+  pass    = "passw0rd"
+  sslmode = "skip-verify"

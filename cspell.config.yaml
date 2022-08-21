@@ -1,0 +1,21 @@
+version: "0.2"
+ignorePaths:
+  - README.md
+  - README-sqlboiler.jp.md
+  - "**/gen/**"
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - dbname
+  - dbuser
+  - fkey
+  - friendsofgo
+  - gettingstarted
+  - passw
+  - qmhelper
+  - sqlboiler
+  - sslmode
+  - strmangle
+  - volatiletech
+ignoreWords: []
+import: []
