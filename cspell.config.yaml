@@ -8,14 +8,29 @@ dictionaries: []
 words:
   - dbname
   - dbuser
+  - devel
+  - extendee
   - fkey
   - friendsofgo
   - gettingstarted
+  - googleapis
+  - hanako
+  - hanko
+  - Helperint
+  - Idxs
+  - jiro
+  - messagev
+  - oklog
   - passw
+  - protocolbuffers
+  - protoimpl
+  - protoreflect
   - qmhelper
+  - sato
   - sqlboiler
   - sslmode
   - strmangle
+  - upserted
   - volatiletech
 ignoreWords: []
 import: []

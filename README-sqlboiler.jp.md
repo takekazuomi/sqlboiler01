@@ -269,11 +269,13 @@ fmt.Println(len(users.R.FavoriteMovies))
 
 #### Videos
 
-If you like learning via a video medium, sqlboiler has a number of screencasts
-available.
+If you like learning via a video medium, sqlboiler has a number of screencasts available.
 
-*NOTE:* These videos predate modules (v4), the installation/import paths will be
-different though everything else should remain similar.
+ビデオ媒体での学習がお好きな方は、sqlboilerにスクリーンキャストが多数用意されています。
+
+*NOTE:* These videos predate modules (v4), the installation/import paths will be different though everything else should remain similar.
+
+*注意：* これらのビデオはモジュール(v4)より前のものなので、インストールやインポートのパスは異なりますが、他のすべては類似しているはずです。
 
 [SQLBoiler: Getting Started](https://www.youtube.com/watch?v=y5utRS9axfg)
 
@@ -285,12 +287,17 @@ different though everything else should remain similar.
 
 #### Download
 
-First you have to install the code generator binaries. There's the main binary
-and then a separate driver binary (select the right one for your database).
+First you have to install the code generator binaries. There's the main binary and then a separate driver binary (select the right one for your database).
 
-Be very careful when installing, there's confusion in the Go ecosystem and
-knowing what are the right commands to run for which Go version can be tricky.
+まず、コードジェネレータのバイナリをインストールする必要があります。メインのバイナリと、別のドライババイナリがあります（お使いのデータベースに適したものを選択してください）。
+
+Be very careful when installing, there's confusion in the Go ecosystem and knowing what are the right commands to run for which Go version can be tricky.
+
+インストールには十分な注意が必要です。Goエコシステムには混乱があり、どのGoバージョンで実行するのが正しいコマンドなのかを知ることは厄介なことです。
+
 Ensure you don't forget any /v suffixes or you'll end up on an old version.
+
+また、/vを忘れると古いバージョンになってしまうので注意してください。
 
 ```shell
 # Go 1.16 and above:
@@ -319,11 +326,13 @@ go get github.com/volatiletech/null/v8
 
 #### Configuration
 
-Create a configuration file. Because the project uses [viper](https://github.com/spf13/viper), TOML, JSON and YAML are all usable
-but only TOML is supported. Environment variables are also able to be used.
+Create a configuration file. Because the project uses [viper](https://github.com/spf13/viper), TOML, JSON and YAML are all usable but only TOML is supported. Environment variables are also able to be used.
 
-The configuration file should be named `sqlboiler.toml` and is searched for in
-the following directories in this order:
+設定ファイルを作成します。プロジェクトでは[viper](https://github.com/spf13/viper)を使用しているため、TOML、JSON、YAMLのいずれも使用可能ですが、TOMLのみサポートされています。また、環境変数も使用可能です。
+
+The configuration file should be named `sqlboiler.toml` and is searched for in the following directories in this order:
+
+設定ファイルは `sqlboiler.toml` という名前で、以下のディレクトリの中からこの順番で探します。
 
 - `./`
 - `$XDG_CONFIG_HOME/sqlboiler/`
@@ -331,25 +340,34 @@ the following directories in this order:
 
 We will assume TOML for the rest of the documentation.
 
+以降のドキュメントではTOMLを想定しています。
+
 ##### Database Driver Configuration
 
 The configuration for a specific driver (in these examples we'll use `psql`) must all be prefixed by the driver name. You must use a configuration file or environment variables for configuring the database driver; there are no command-line options for providing driver-specific configuration.
 
+特定のドライバ (この例では `psql` を使用します) に対する設定は、すべてドライバ名を先頭に付けなければなりません。データベースドライバの設定には、設定ファイルか環境変数を使用しなければなりません。ドライバ固有の設定を行うためのコマンドラインオプションはありません。
+
 In the configuration file for postgresql for example you would do:
+
+例えば、postgresqlの設定ファイルでは、次のようになります。
 
 ```toml
 [psql]
 dbname = "your_database_name"
 ```
 
-When you use an environment variable it must also be prefixed by the driver
-name:
+When you use an environment variable it must also be prefixed by the driver name:
+
+環境変数を使用する場合は、その前にドライバ名を付ける必要があります。
 
 ```sh
 PSQL_DBNAME="your_database_name"
 ```
 
 The values that exist for the drivers:
+
+ドライバーに存在する値:
 
 | Name | Required | Postgres Default | MySQL Default | MSSQL Default |
 | ---- | -------- | ---------------- | ------------- | ------------- |
@@ -376,8 +394,10 @@ blacklist = ["migrations", "addresses.name", "*.secret_col"]
 
 ##### Generic config options
 
-You can also pass in these top level configuration values if you would prefer
-not to pass them through the command line or environment variables:
+You can also pass in these top level configuration values if you would prefer not to pass them through the command line or environment variables:
+
+また、コマンドラインや環境変数で渡さない方が良い場合は、これらのトップレベルの設定値を渡すことも可能です。
+
 
 | Name                | Defaults  |
 | ------------------- | --------- |
@@ -434,8 +454,9 @@ add-enum-types = true
 
 #### Initial Generation
 
-After creating a configuration file that points at the database we want to
-generate models for, we can invoke the sqlboiler command line utility.
+After creating a configuration file that points at the database we want to generate models for, we can invoke the sqlboiler command line utility.
+
+モデルを生成したいデータベースを指す設定ファイルを作成した後、sqlboilerコマンドラインユーティリティを呼び出します。
 
 ```text
 SQL Boiler generates a Go ORM from template files, tailored to your database schema.
@@ -473,11 +494,13 @@ Flags:
       --wipe                       Delete the output folder (rm -rf) before generation to ensure sanity
 ```
 
-Follow the steps below to do some basic model generation. Once you've generated
-your models, you can run the compatibility tests which will exercise the entirety
-of the generated code. This way you can ensure that your database is compatible
-with SQLBoiler. If you find there are some failing tests, please check the
-[Diagnosing Problems](#diagnosing-problems) section.
+Follow the steps below to do some basic model generation. Once you've generated your models, you can run the compatibility tests which will exercise the entirety of the generated code. This way you can ensure that your database is compatible with SQLBoiler. 
+
+以下の手順に従って、基本的なモデル生成を行ってください。モデルを生成したら、生成されたコード全体を実行する互換性テストを実行することができます。このようにして、あなたのデータベースがSQLBoilerと互換性があることを確認することができます。
+
+If you find there are some failing tests, please check the [Diagnosing Problems](#diagnosing-problems) section.
+
+テストに失敗している箇所がある場合は、[問題の診断](#diagnosing-problem)の項を確認してください。
 
 ```sh
 # Generate our models and exclude the migrations table
@@ -934,34 +957,34 @@ option and also know the problems with it.
 ## Diagnosing Problems
 
 The most common causes of problems and panics are:
+トラブルやパニックの原因として多いのは
 
 - Forgetting to exclude tables you do not want included in your generation, like migration tables.
+- マイグレーションテーブルなど、世代に含めたくないテーブルを除外するのを忘れた。
 - Tables without a primary key. All tables require one.
+- 主キーを持たないテーブル。すべてのテーブルで必要。
 - Forgetting to put foreign key constraints on your columns that reference other tables.
-- The compatibility tests require privileges to create a database for testing purposes, ensure the user
-  supplied in your `sqlboiler.toml` config has adequate privileges.
+- 他のテーブルを参照するカラムに外部キー制約を設定するのを忘れている。
+- The compatibility tests require privileges to create a database for testing purposes, ensure the user supplied in your `sqlboiler.toml` config has adequate privileges.
+- compatibility testsでは、テスト用のデータベースを作成するための権限が必要です。`sqlboiler.toml` の設定に指定されたユーザーが適切な権限を持っていることを確認してください。
 - A nil or closed database handle. Ensure your passed in `boil.Executor` is not nil.
-  - If you decide to use the `G` variant of functions instead, make sure you've initialized your
-    global database handle using `boil.SetDB()`.
-- Naming collisions, if the code fails to compile because there are naming collisions, look at the
-  [aliasing](#aliases) feature.
-- Race conditions in tests or when using global variable models and using
-  relationship set helpers in multiple goroutines. Note that Set/Add/Remove
-  relationship helpers modify their input parameters to maintain parity between
-  the `.R` struct relationships and the database foreign keys but this can
-  produce subtle race conditions. Test for this using the `-race` flag on the
-  go tool.
-- A field not being inserted (usually a default true boolean), `boil.Infer` looks at the zero
-  value of your Go type (it doesn't care what the default value in the database is) to determine
-  if it should insert your field or not. In the case of a default true boolean value, when you
-  want to set it to false; you set that in the struct but that's the zero value for the bool
-  field in Go so sqlboiler assumes you do not want to insert that field and you want the default
-  value from the database. Use a whitelist/greylist to add that field to the list of fields
-  to insert.
-- decimal library showing errors like: `pq: encode: unknown type types.NullDecimal`
-  is a result of a too-new and broken version of the github.com/ericlargergren/decimal
-  package, use the following version in your go.mod:
+- nil またはクローズされたデータベースハンドル。渡された `boil.Executor` が nil でないことを確認する。
+  - If you decide to use the `G` variant of functions instead, make sure you've initialized your global database handle using `boil.SetDB()`.
+  - `G` 系の関数を使用する場合は、 `boil.SetDB()` を使用してグローバルデータベースハンドルを初期化していることを確認してください。
+- Naming collisions, if the code fails to compile because there are naming collisions, look at the [aliasing](#aliases) feature.
+- ネーミングの衝突が原因でコードがコンパイルできない場合は、[aliasing](#aliases)機能に注目しましょう。
+- Race conditions in tests or when using global variable models and using relationship set helpers in multiple goroutines. Note that Set/Add/Remove relationship helpers modify their input parameters to maintain parity between the `.R` struct relationships and the database foreign keys but this can produce subtle race conditions. Test for this using the `-race` flag on the go tool.
+- テストやグローバル変数モデルを使用し、複数のゴルーチンでリレーションシップセットヘルパーを使用する場合のレースコンディション。Set/Add/Remove リレーションヘルパーは `.R` 構造体のリレーションとデータベースの外部キーの間のパリティを維持するために入力パラメータを変更しますが、これは微妙なレースコンディションを発生させる可能性があることに注意してください。goツールの `-race` フラグを使用して、これをテストしてください。
+- A field not being inserted (usually a default true boolean), `boil.Infer` looks at the zero value of your Go type (it doesn't care what the default value in the database is) to determine if it should insert your field or not. 
+  In the case of a default true boolean value, when you want to set it to false; you set that in the struct but that's the zero value for the bool field in Go so sqlboiler assumes you do not want to insert that field and you want the default value from the database. Use a whitelist/greylist to add that field to the list of fields to insert.
+- フィールドがインサートされない (通常はデフォルトが true の boolean) 場合は、`boil.Infer` が Go タイプのゼロ値 (データベースのデフォルト値は気にしない) を調べて、フィールドを挿入すべきかどうかを判断します。デフォルトの true boolean 値を false に設定したい場合、構造体でそれを設定しますが、Go の bool フィールドのゼロ値なので、sqlboiler はそのフィールドを挿入せず、データベースのデフォルト値が必要であると見なします。ホワイトリスト/グレイリストを使用して、挿入するフィールドのリストにそのフィールドを追加してください。
+  boolean 値のデフォルトがtrueの場合、それを false に設定したい場合、構造体でそれを設定しますが、Go の bool フィールドの値はゼロなので、sqlboiler はそのフィールドを挿入せず、データベースからのデフォルト値が必要であると見なします。whitelist/greylist を使用して、挿入するフィールドのリストにそのフィールドを追加してください。※structの値がGoのzero valueの場合、insert時にフィールドが省略されます。その結果、DBでdefaultがtureの場合に、falseが書き込まれません。whitelist/greylist で挿入するフィールドのリストに指定する必要があります。
+- decimal library showing errors like: `pq: encode: unknown type types.NullDecimal` is a result of a too-new and broken version of the github.com/ericlargergren/decimal package, use the following version in your go.mod:
   github.com/ericlagergren/decimal v0.0.0-20181231230500-73749d4874d5
+- decimal libraryで以下のようなエラーが発生します。`pq: encode: unknown type types.NullDecimal` は github.com/ericlargergren/decimal パッケージの新しすぎる壊れたバージョンの結果なので、次のバージョンを go.mod で使ってください。※これは、https://github.com/ericlagergren/decimal/releases/tag/v3.3.1 と同じかな？ https://github.com/ericlagergren/decimal/issues/143 https://github.com/volatiletech/sqlboiler/issues/607
+  github.com/ericlagergren/decimal v0.0.0-20181231230500-73749d4874d5
+
+
 
 For errors with other causes, it may be simple to debug yourself by looking at the generated code.
 Setting `boil.DebugMode` to `true` can help with this. You can change the output using `boil.DebugWriter` (defaults to `os.Stdout`).
@@ -1772,15 +1795,18 @@ rowsAff, err := pilots.DeleteAll(ctx, db)
 
 ### Upsert
 
-[Upsert](https://www.postgresql.org/docs/9.5/static/sql-insert.html) allows you to perform an insert
-that optionally performs an update when a conflict is found against existing row values.
+[Upsert](https://www.postgresql.org/docs/9.5/static/sql-insert.html) allows you to perform an insert that optionally performs an update when a conflict is found against existing row values.
 
-The `updateColumns` and `insertColumns` operates in the same fashion that it does for [Update](#update)
-and [Insert](#insert).
+[Upsert](https://www.postgresql.org/docs/9.5/static/sql-insert.html) は、既存の行の値に対して競合が見つかった場合に、オプションで更新を実行する挿入を実行することができます。
 
+The `updateColumns` and `insertColumns` operates in the same fashion that it does for [Update](#update) and [Insert](#insert).
 
-If an insert is performed, your object will be updated with any missing default values from the database,
-such as auto-incrementing column values.
+`updateColumns` と `insertColumns` は、 [Update](#update) と [Insert](#insert) と同じように動作します。
+
+If an insert is performed, your object will be updated with any missing default values from the database, such as auto-incrementing column values.
+
+挿入が実行された場合、カラムの自動インクリメントのような、値が指定されていないものは、データベースからのデフォルト値でオブジェクトが更新されます。
+
 
 ```go
 var p1 models.Pilot

@@ -1,0 +1,525 @@
+/usr/sbin/mysqld, Version: 8.0.29 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.29 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-08-25T07:27:27.146366Z	    8 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:27:27.155778Z	    8 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.156052Z	    8 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.164051Z	    8 Close stmt	
+2022-08-25T07:27:27.164236Z	    8 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.164459Z	    8 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (3,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.167313Z	    8 Close stmt	
+2022-08-25T07:27:27.167444Z	    8 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.167628Z	    8 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.170944Z	    8 Close stmt	
+2022-08-25T07:27:27.171063Z	    8 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.171185Z	    8 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.173132Z	    8 Close stmt	
+2022-08-25T07:27:27.173343Z	    8 Prepare	SELECT `id` FROM `users` WHERE `name`=?
+2022-08-25T07:27:27.173561Z	    8 Execute	SELECT `id` FROM `users` WHERE `name`='yamada'
+2022-08-25T07:27:27.173996Z	    8 Close stmt	
+2022-08-25T07:27:27.174178Z	    8 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.174395Z	    8 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (8,'sato','hanako') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:27:27.176261Z	    8 Close stmt	
+2022-08-25T07:29:11.910263Z	    9 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:29:32.146151Z	    9 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:29:32.146291Z	    9 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:29:32.152807Z	    9 Close stmt	
+2022-08-25T07:30:12.661705Z	    9 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:30:12.662010Z	    9 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (3,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:30:12.669110Z	    9 Close stmt	
+2022-08-25T07:30:49.337637Z	    9 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:30:49.337939Z	    9 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:30:49.345807Z	    9 Close stmt	
+2022-08-25T07:31:37.033407Z	    9 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:31:37.033732Z	    9 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:31:37.039227Z	    9 Close stmt	
+2022-08-25T07:31:37.039488Z	    9 Prepare	SELECT `id` FROM `users` WHERE `name`=?
+2022-08-25T07:31:37.039868Z	    9 Execute	SELECT `id` FROM `users` WHERE `name`='yamada'
+2022-08-25T07:31:37.040462Z	    9 Close stmt	
+2022-08-25T07:32:20.826392Z	    9 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:20.826767Z	    9 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (8,'sato','hanako') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:20.832469Z	    9 Close stmt	
+2022-08-25T07:32:37.960767Z	   10 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:32:41.562544Z	   10 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:41.562873Z	   10 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:41.573293Z	   10 Close stmt	
+2022-08-25T07:32:41.573859Z	   10 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:41.574269Z	   10 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (3,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:41.577662Z	   10 Close stmt	
+2022-08-25T07:32:41.577978Z	   10 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:41.578327Z	   10 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:32:41.583025Z	   10 Close stmt	
+2022-08-25T07:33:15.054947Z	   10 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:33:15.055101Z	   10 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:33:15.059966Z	   10 Close stmt	
+2022-08-25T07:33:15.060142Z	   10 Prepare	SELECT `id` FROM `users` WHERE `name`=?
+2022-08-25T07:33:15.060326Z	   10 Execute	SELECT `id` FROM `users` WHERE `name`='yamada'
+2022-08-25T07:33:15.060680Z	   10 Close stmt	
+2022-08-25T07:33:41.629739Z	   11 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:33:41.671157Z	   11 Query	/* mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2022-08-25T07:33:41.672913Z	   11 Query	SET NAMES utf8mb4
+2022-08-25T07:33:41.674317Z	   11 Query	SET character_set_results = utf8
+2022-08-25T07:33:41.675810Z	   11 Query	SET autocommit=1
+2022-08-25T07:33:41.677482Z	   11 Query	select version(), @@version_comment, database()
+2022-08-25T07:33:41.679245Z	   11 Query	show variables like 'aurora\_version'
+2022-08-25T07:33:41.697090Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:33:41.698860Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T07:33:41.701871Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:41.704040Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:33:41.705804Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ use db
+2022-08-25T07:33:41.707701Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:41.710544Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:33:41.718501Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:41.720796Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T07:33:41.726539Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:41.730127Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:41.733368Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T07:33:41.735146Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T07:33:41.736595Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T07:33:41.748591Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:41.754144Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:33:42.677665Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:33:42.679445Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T07:33:42.681726Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:33:42.689200Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:42.691304Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T07:33:42.692585Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T07:33:42.698343Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:42.702183Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:42.704840Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T07:33:42.706121Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T07:33:42.707832Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T07:33:42.716169Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:33:42.720943Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:36:23.206895Z	   12 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:36:27.866953Z	   12 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:36:27.867304Z	   12 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:36:27.873459Z	   12 Close stmt	
+2022-08-25T07:36:27.873922Z	   12 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:36:27.874210Z	   12 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (3,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:36:27.877713Z	   12 Close stmt	
+2022-08-25T07:36:27.877991Z	   12 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:36:27.878346Z	   12 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:36:27.881886Z	   12 Close stmt	
+2022-08-25T07:39:01.491136Z	   12 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:39:01.491379Z	   12 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:39:01.497094Z	   12 Close stmt	
+2022-08-25T07:41:28.903747Z	   13 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:41:28.945794Z	   13 Query	/* mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2022-08-25T07:41:28.948059Z	   13 Query	SET NAMES utf8mb4
+2022-08-25T07:41:28.949588Z	   13 Query	SET character_set_results = utf8
+2022-08-25T07:41:28.951386Z	   13 Query	SET autocommit=1
+2022-08-25T07:41:28.953643Z	   13 Query	select version(), @@version_comment, database()
+2022-08-25T07:41:28.955722Z	   13 Query	show variables like 'aurora\_version'
+2022-08-25T07:41:28.975979Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T07:41:28.981391Z	   13 Query	SHOW WARNINGS
+2022-08-25T07:41:28.984226Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:41:28.985704Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ use db
+2022-08-25T07:41:28.987242Z	   13 Query	SHOW WARNINGS
+2022-08-25T07:41:28.990367Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:41:28.993487Z	   13 Query	SHOW WARNINGS
+2022-08-25T07:41:28.996399Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:41:28.998236Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T07:41:28.999857Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ delete from users where id=8
+2022-08-25T07:41:29.011612Z	   13 Query	SHOW WARNINGS
+2022-08-25T07:41:29.016461Z	   13 Query	SHOW WARNINGS
+2022-08-25T07:41:29.018347Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T07:41:29.024458Z	   13 Query	SHOW WARNINGS
+2022-08-25T07:41:29.028413Z	   13 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:41:38.701538Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:41:38.703470Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T07:41:38.705844Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T07:41:38.712558Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:41:38.714847Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T07:41:38.716492Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T07:41:38.722025Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:41:38.725434Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:41:38.728819Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T07:41:38.730424Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T07:41:38.731813Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T07:41:38.759849Z	   11 Query	SHOW WARNINGS
+2022-08-25T07:41:38.766428Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T07:51:21.692771Z	   14 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T07:51:34.018398Z	   14 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:34.018790Z	   14 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:34.027145Z	   14 Close stmt	
+2022-08-25T07:51:34.027858Z	   14 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:34.028413Z	   14 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (3,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:34.032985Z	   14 Close stmt	
+2022-08-25T07:51:34.033367Z	   14 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:34.033752Z	   14 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:34.038095Z	   14 Close stmt	
+2022-08-25T07:51:40.388429Z	   14 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:40.388585Z	   14 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T07:51:40.395806Z	   14 Close stmt	
+2022-08-25T08:13:58.369363Z	   13 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:13:58.371548Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:13:58.375035Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:13:58.378874Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:13:58.382250Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:13:58.383910Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:13:58.385428Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ delete from users where id>2
+2022-08-25T08:13:58.395112Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:13:58.398707Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:13:58.400756Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:13:58.407862Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:13:58.413067Z	   13 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:14:01.101745Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:14:01.103898Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:14:01.108100Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:14:01.114580Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:14:01.116968Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:14:01.118722Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:14:01.124849Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:14:01.129095Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:14:01.132123Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:14:01.133926Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:14:01.135847Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:14:01.152173Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:14:01.158075Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:14:11.177678Z	   15 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T08:14:11.178312Z	   15 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.178380Z	   15 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.185097Z	   15 Close stmt	
+2022-08-25T08:14:11.185190Z	   15 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.185322Z	   15 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (30,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.191197Z	   15 Close stmt	
+2022-08-25T08:14:11.191297Z	   15 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.191465Z	   15 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.197711Z	   15 Close stmt	
+2022-08-25T08:14:11.197813Z	   15 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.197942Z	   15 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.201938Z	   15 Close stmt	
+2022-08-25T08:14:11.202052Z	   15 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.202190Z	   15 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (32,'sato','hanako') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.206325Z	   15 Close stmt	
+2022-08-25T08:14:11.206455Z	   15 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.206662Z	   15 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('sato','taro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:14:11.210059Z	   15 Close stmt	
+2022-08-25T08:15:08.244771Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:15:08.246582Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:15:08.248759Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:15:08.261401Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:15:08.263736Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:15:08.265357Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:15:08.272872Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:15:08.276802Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:15:08.279816Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:15:08.281254Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:15:08.282521Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:15:08.290968Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:15:08.296103Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:15:32.553455Z	   16 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T08:15:32.553934Z	   16 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.554031Z	   16 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.560882Z	   16 Close stmt	
+2022-08-25T08:15:32.561124Z	   16 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.561277Z	   16 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (30,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.564544Z	   16 Close stmt	
+2022-08-25T08:15:32.564694Z	   16 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.564821Z	   16 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.568574Z	   16 Close stmt	
+2022-08-25T08:15:32.568664Z	   16 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.568743Z	   16 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.570840Z	   16 Close stmt	
+2022-08-25T08:15:32.570945Z	   16 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.571063Z	   16 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (36,'sato','hanako') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:15:32.572405Z	   16 Close stmt	
+2022-08-25T08:21:06.520433Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:21:06.522193Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:21:06.525083Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:21:06.531652Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:21:06.533959Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:21:06.535254Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:21:06.541371Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:21:06.544975Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:21:06.547415Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:21:06.548710Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:21:06.550221Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:21:06.564819Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:21:06.570180Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:10.779721Z	   13 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:10.781779Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:24:10.784867Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:10.788046Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:24:10.790687Z	   13 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:10.792443Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:24:10.793873Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ delete from users where id>2
+2022-08-25T08:24:10.806043Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:24:10.809388Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:24:10.811048Z	   13 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:24:10.817512Z	   13 Query	SHOW WARNINGS
+2022-08-25T08:24:10.822308Z	   13 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:13.835749Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:13.838046Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:24:13.840509Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:13.846728Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:13.849085Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:24:13.850520Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:24:13.856029Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:13.859854Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:13.863169Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:24:13.864752Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:24:13.866138Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:24:13.881632Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:13.886369Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:18.129014Z	   17 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T08:24:26.076259Z	   17 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:24:26.076599Z	   17 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:24:26.085694Z	   17 Close stmt	
+2022-08-25T08:24:28.674239Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:28.676046Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:24:28.678456Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:28.685556Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:28.687948Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:24:28.689454Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:24:28.695904Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:28.699182Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:28.702006Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:24:28.703373Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:24:28.704661Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:24:28.718017Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:28.724620Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:32.527345Z	   18 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T08:24:32.573589Z	   18 Query	/* mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2022-08-25T08:24:32.575543Z	   18 Query	SET NAMES utf8mb4
+2022-08-25T08:24:32.576930Z	   18 Query	SET character_set_results = utf8
+2022-08-25T08:24:32.578355Z	   18 Query	SET autocommit=1
+2022-08-25T08:24:32.580144Z	   18 Query	select version(), @@version_comment, database()
+2022-08-25T08:24:32.582179Z	   18 Query	show variables like 'aurora\_version'
+2022-08-25T08:24:32.598977Z	   18 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:24:32.601648Z	   18 Query	SHOW WARNINGS
+2022-08-25T08:24:32.603492Z	   18 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:32.605228Z	   18 Query	/* ApplicationName=DataGrip 2022.2.1 */ use db
+2022-08-25T08:24:32.607277Z	   18 Query	SHOW WARNINGS
+2022-08-25T08:24:32.609718Z	   18 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:32.618599Z	   18 Query	SHOW WARNINGS
+2022-08-25T08:24:32.620613Z	   18 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:24:32.626053Z	   18 Query	SHOW WARNINGS
+2022-08-25T08:24:32.629664Z	   18 Query	SHOW WARNINGS
+2022-08-25T08:24:32.632001Z	   18 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:24:32.633759Z	   18 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:24:32.635541Z	   18 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.* FROM db.users t
+2022-08-25T08:24:32.657812Z	   18 Query	SHOW WARNINGS
+2022-08-25T08:24:32.663608Z	   18 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:33.655504Z	   17 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:24:33.655625Z	   17 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (37,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:24:33.662304Z	   17 Close stmt	
+2022-08-25T08:24:36.014406Z	   18 Quit	
+2022-08-25T08:24:37.817236Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:37.819207Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:24:37.821262Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:37.827902Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:37.830427Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:24:37.832212Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:24:37.838175Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:37.841973Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:37.845255Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:24:37.846895Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:24:37.848589Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:24:37.857757Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:37.863498Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:48.531161Z	   17 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:24:48.531573Z	   17 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:24:48.538027Z	   17 Close stmt	
+2022-08-25T08:24:51.427163Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:24:51.429115Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:24:51.433263Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:24:51.441595Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:51.444081Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:24:51.445627Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:24:51.450753Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:51.454041Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:51.456677Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:24:51.458381Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:24:51.460139Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:24:51.477937Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:24:51.483805Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:25:46.020578Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:25:46.022466Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:25:46.024689Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:25:46.037288Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:46.039528Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:25:46.041004Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:25:46.046516Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:46.050058Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:46.052708Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:25:46.054451Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:25:46.055936Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:25:46.067489Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:46.072856Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:25:54.841671Z	   17 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:25:54.841979Z	   17 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:25:54.849499Z	   17 Close stmt	
+2022-08-25T08:25:57.166143Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:25:57.167856Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:25:57.170552Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:25:57.177181Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:57.179622Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:25:57.181048Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:25:57.186334Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:57.189393Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:57.192035Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:25:57.193284Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:25:57.194527Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:25:57.209348Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:25:57.214966Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:26:19.654145Z	   19 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T08:26:19.710321Z	   19 Query	/* mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2022-08-25T08:26:19.712305Z	   19 Query	SET NAMES utf8mb4
+2022-08-25T08:26:19.713706Z	   19 Query	SET character_set_results = utf8
+2022-08-25T08:26:19.715072Z	   19 Query	SET autocommit=1
+2022-08-25T08:26:19.717014Z	   19 Query	select version(), @@version_comment, database()
+2022-08-25T08:26:19.718719Z	   19 Query	show variables like 'aurora\_version'
+2022-08-25T08:26:19.732169Z	   19 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:26:19.735156Z	   19 Query	SHOW WARNINGS
+2022-08-25T08:26:19.737125Z	   19 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:26:19.738485Z	   19 Query	/* ApplicationName=DataGrip 2022.2.1 */ use db
+2022-08-25T08:26:19.740213Z	   19 Query	SHOW WARNINGS
+2022-08-25T08:26:19.742487Z	   19 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:26:19.748777Z	   19 Query	SHOW WARNINGS
+2022-08-25T08:26:19.750585Z	   19 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:26:19.755411Z	   19 Query	SHOW WARNINGS
+2022-08-25T08:26:19.758126Z	   19 Query	SHOW WARNINGS
+2022-08-25T08:26:19.759886Z	   19 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:26:19.760927Z	   19 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:26:19.762013Z	   19 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.* FROM db.users t
+2022-08-25T08:26:19.777891Z	   19 Query	SHOW WARNINGS
+2022-08-25T08:26:19.783291Z	   19 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:26:20.892141Z	   17 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:26:20.892556Z	   17 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (39,'sato','hanako') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:26:20.900649Z	   17 Close stmt	
+2022-08-25T08:26:23.080238Z	   19 Quit	
+2022-08-25T08:26:25.569315Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:26:25.571279Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:26:25.574108Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:26:25.581637Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:25.583928Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:26:25.585394Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:26:25.591688Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:25.595378Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:25.598634Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:26:25.600411Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:26:25.601995Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:26:25.615532Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:25.621585Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:26:47.158972Z	   17 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:26:47.159278Z	   17 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('sato','taro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:26:47.166727Z	   17 Close stmt	
+2022-08-25T08:26:50.064586Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:26:50.066395Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:26:50.068524Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:26:50.074840Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:50.077117Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:26:50.078985Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:26:50.084990Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:50.088419Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:50.091342Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:26:50.093073Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:26:50.094728Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:26:50.103943Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:26:50.110334Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:26:58.150846Z	   20 Connect	dbuser@192.168.144.1 on db using SSL/TLS
+2022-08-25T08:27:16.679406Z	   20 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:16.679737Z	   20 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:16.687736Z	   20 Close stmt	
+2022-08-25T08:27:19.715897Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:19.717891Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:27:19.720442Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:27:19.726272Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:19.728598Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:27:19.730369Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:27:19.736170Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:19.739891Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:19.742781Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:27:19.744527Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:27:19.746111Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:27:19.760585Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:19.767763Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:23.540253Z	   20 Prepare	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:23.540700Z	   20 Execute	INSERT INTO `users` (`id`,`name`,`memo`) VALUES (37,'taro','hello world') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:23.549535Z	   20 Close stmt	
+2022-08-25T08:27:25.921431Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:25.923589Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:27:25.925577Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:27:25.934875Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:25.936970Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:27:25.938413Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:27:25.944048Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:25.947821Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:25.950899Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:27:25.952634Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:27:25.954184Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:27:25.971456Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:25.976601Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:30.489373Z	   20 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:30.489739Z	   20 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('taro','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:30.497639Z	   20 Close stmt	
+2022-08-25T08:27:32.611582Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:32.613387Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:27:32.616412Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:27:32.624122Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:32.626156Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:27:32.627792Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:27:32.634114Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:32.637735Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:32.640569Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:27:32.641979Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:27:32.643154Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:27:32.659083Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:32.664201Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:41.799585Z	   20 Prepare	INSERT INTO `users` (`name`,`memo`) VALUES (?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:41.799850Z	   20 Execute	INSERT INTO `users` (`name`,`memo`) VALUES ('yamada','jiro') ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`)
+2022-08-25T08:27:41.807619Z	   20 Close stmt	
+2022-08-25T08:27:44.640398Z	   11 Query	SELECT @@session.transaction_isolation
+2022-08-25T08:27:44.642534Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ set session transaction read write
+2022-08-25T08:27:44.644782Z	   11 Query	SELECT @@session.transaction_read_only
+2022-08-25T08:27:44.651358Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:44.653113Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=DEFAULT
+2022-08-25T08:27:44.654416Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ select database()
+2022-08-25T08:27:44.659132Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:44.662543Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:44.665457Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET net_write_timeout=600
+2022-08-25T08:27:44.666845Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SET SQL_SELECT_LIMIT=501
+2022-08-25T08:27:44.668111Z	   11 Query	/* ApplicationName=DataGrip 2022.2.1 */ SELECT t.*
+FROM db.users t
+LIMIT 501
+2022-08-25T08:27:44.685350Z	   11 Query	SHOW WARNINGS
+2022-08-25T08:27:44.690423Z	   11 Query	SELECT @@session.transaction_isolation

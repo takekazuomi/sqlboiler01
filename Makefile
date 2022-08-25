@@ -23,7 +23,7 @@ login:	## login db
 	docker compose -f database/docker-compose.yml exec db /bin/bash
 
 clean: 		## clean
-clean: db-down
+clean: down
 	rm -rf database/mysql/data/*
 
 mysql-client:	## connet mysql from mysql cli
