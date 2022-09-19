@@ -1,5 +1,5 @@
 development:
   dialect: mysql
-  datasource: ${MYSQL_USER}:${MYSQL_PASSWORD}@tcp(${MYSQL_HOST})/${MYSQL_DATABASE}?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=true&multiStatements=true
+  datasource: ${MYSQL_USER}:${MYSQL_PASSWORD}@tcp(${MYSQL_HOST})/${MYSQL_DATABASE}?parseTime=true&multiStatements=true
   dir: migrations
   table: migrations
