@@ -2,6 +2,8 @@
 create table table1 (
     id int auto_increment primary key,
     status enum ('apple', 'orange', 'mango') not null,
+    created_at timestamp not null,
+    updated_at timestamp not null,
     deleted_at timestamp null,
 
     alive bool generated always as (
