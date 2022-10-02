@@ -1737,8 +1737,7 @@ err := p4.Insert(ctx, db, boil.Whitelist("id", "name")) // Insert the fourth pil
 ```
 
 ### Update
-`Update` can be performed on a single object, a slice of objects or as a [Finisher](#finishers)
-for a collection of rows.
+`Update` can be performed on a single object, a slice of objects or as a [Finisher](#finishers) for a collection of rows.
 
 `Update` on a single object optionally takes a `whitelist`. The purpose of the
 whitelist is to specify which columns in your object should be updated in the database.
@@ -1915,9 +1914,11 @@ instead of an enum.
 
 ### Constants
 
-The models package will also contain some structs that contain all table,
-column, relationship names harvested from the database at generation time. Type
-safe where query mods are also generated.
+The models package will also contain some structs that contain all table, column, relationship names harvested from the database at generation time. 
+models packageは、生成時にデータベースから取得したすべてのテーブル、カラム、リレーション名を含むいくつかの構造体を含みます。
+
+Type safe where query mods are also generated.
+Type safe where query mod も含みます。
 
 There are type safe identifiers at:
 * models.TableNames.TableName

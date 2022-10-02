@@ -1,3 +1,4 @@
-# SQLBoiler - Getting Started
+# 論理削除
+
 
 
