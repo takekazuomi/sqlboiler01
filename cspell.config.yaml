@@ -27,6 +27,7 @@ words:
   - protoimpl
   - protoreflect
   - qmhelper
+  - Rels
   - sato
   - sqlboiler
   - sslmode

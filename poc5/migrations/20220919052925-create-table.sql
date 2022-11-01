@@ -2,7 +2,9 @@
 create table table1
 (
     id varbinary(16) not null primary key,
-    f1 varchar(100) default '' not null
+    num int not null,
+    f1 varchar(100) default '' not null,
+    constraint table1_num_uindex unique (num)
 );
 
 create table table2

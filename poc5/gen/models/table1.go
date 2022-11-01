@@ -24,27 +24,32 @@ import (
 
 // Table1 is an object representing the database table.
 type Table1 struct {
-	ID ulid.ULID `boil:"id" json:"id" toml:"id" yaml:"id"`
-	F1 string    `boil:"f1" json:"f1" toml:"f1" yaml:"f1"`
+	ID  ulid.ULID `boil:"id" json:"id" toml:"id" yaml:"id"`
+	Num int       `boil:"num" json:"num" toml:"num" yaml:"num"`
+	F1  string    `boil:"f1" json:"f1" toml:"f1" yaml:"f1"`
 
 	R *table1R `boil:"-" json:"-" toml:"-" yaml:"-"`
 	L table1L  `boil:"-" json:"-" toml:"-" yaml:"-"`
 }
 
 var Table1Columns = struct {
-	ID string
-	F1 string
+	ID  string
+	Num string
+	F1  string
 }{
-	ID: "id",
-	F1: "f1",
+	ID:  "id",
+	Num: "num",
+	F1:  "f1",
 }
 
 var Table1TableColumns = struct {
-	ID string
-	F1 string
+	ID  string
+	Num string
+	F1  string
 }{
-	ID: "table1.id",
-	F1: "table1.f1",
+	ID:  "table1.id",
+	Num: "table1.num",
+	F1:  "table1.f1",
 }
 
 // Generated where
@@ -68,6 +73,29 @@ func (w whereHelperulid_ULID) GT(x ulid.ULID) qm.QueryMod {
 }
 func (w whereHelperulid_ULID) GTE(x ulid.ULID) qm.QueryMod {
 	return qmhelper.Where(w.field, qmhelper.GTE, x)
+}
+
+type whereHelperint struct{ field string }
+
+func (w whereHelperint) EQ(x int) qm.QueryMod  { return qmhelper.Where(w.field, qmhelper.EQ, x) }
+func (w whereHelperint) NEQ(x int) qm.QueryMod { return qmhelper.Where(w.field, qmhelper.NEQ, x) }
+func (w whereHelperint) LT(x int) qm.QueryMod  { return qmhelper.Where(w.field, qmhelper.LT, x) }
+func (w whereHelperint) LTE(x int) qm.QueryMod { return qmhelper.Where(w.field, qmhelper.LTE, x) }
+func (w whereHelperint) GT(x int) qm.QueryMod  { return qmhelper.Where(w.field, qmhelper.GT, x) }
+func (w whereHelperint) GTE(x int) qm.QueryMod { return qmhelper.Where(w.field, qmhelper.GTE, x) }
+func (w whereHelperint) IN(slice []int) qm.QueryMod {
+	values := make([]interface{}, 0, len(slice))
+	for _, value := range slice {
+		values = append(values, value)
+	}
+	return qm.WhereIn(fmt.Sprintf("%s IN ?", w.field), values...)
+}
+func (w whereHelperint) NIN(slice []int) qm.QueryMod {
+	values := make([]interface{}, 0, len(slice))
+	for _, value := range slice {
+		values = append(values, value)
+	}
+	return qm.WhereNotIn(fmt.Sprintf("%s NOT IN ?", w.field), values...)
 }
 
 type whereHelperstring struct{ field string }
@@ -94,11 +122,13 @@ func (w whereHelperstring) NIN(slice []string) qm.QueryMod {
 }
 
 var Table1Where = struct {
-	ID whereHelperulid_ULID
-	F1 whereHelperstring
+	ID  whereHelperulid_ULID
+	Num whereHelperint
+	F1  whereHelperstring
 }{
-	ID: whereHelperulid_ULID{field: "`table1`.`id`"},
-	F1: whereHelperstring{field: "`table1`.`f1`"},
+	ID:  whereHelperulid_ULID{field: "`table1`.`id`"},
+	Num: whereHelperint{field: "`table1`.`num`"},
+	F1:  whereHelperstring{field: "`table1`.`f1`"},
 }
 
 // Table1Rels is where relationship names are stored.
@@ -129,8 +159,8 @@ func (r *table1R) GetTable2s() Table2Slice {
 type table1L struct{}
 
 var (
-	table1AllColumns            = []string{"id", "f1"}
-	table1ColumnsWithoutDefault = []string{"id", "f1"}
+	table1AllColumns            = []string{"id", "num", "f1"}
+	table1ColumnsWithoutDefault = []string{"id", "num", "f1"}
 	table1ColumnsWithDefault    = []string{}
 	table1PrimaryKeyColumns     = []string{"id"}
 	table1GeneratedColumns      = []string{}
@@ -861,6 +891,7 @@ func (o Table1Slice) UpdateAll(ctx context.Context, exec boil.ContextExecutor, c
 
 var mySQLTable1UniqueColumns = []string{
 	"id",
+	"num",
 }
 
 // Upsert attempts an insert using an executor, and does an update or ignore on conflict.

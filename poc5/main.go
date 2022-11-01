@@ -6,6 +6,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"math/rand"
 	"os"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -30,10 +31,14 @@ func main() {
 	fmt.Println("connected")
 
 	ulid := newULID()
-	fmt.Printf("ulid: %s\n", ulid)
+	num := rand.Int31()
+
+	fmt.Printf("ulid: %s, num:%d\n", ulid, num)
 
 	t := &models.Table1{
-		ID: ulid,
+		ID:  ulid,
+		Num: int(num),
+		F1:  "memo",
 	}
 
 	err = t.Insert(ctx, db, boil.Infer())
@@ -42,7 +47,21 @@ func main() {
 	t1, err := models.Table1s(models.Table1Where.ID.EQ(ulid)).One(ctx, db)
 	dieIf(err)
 
-	fmt.Printf("t1: %#v\n", t1)
+	fmt.Printf("t1: %v\n", t1)
+
+	ulid2 := newULID()
+	fmt.Printf("ulid: %s\n", ulid2)
+	t2 := &models.Table2{
+		ID:       ulid2,
+		Table1ID: ulid,
+		F2:       "table2 memo",
+	}
+	err = t2.Insert(ctx, db, boil.Infer())
+	dieIf(err)
+
+	fmt.Printf("t2: %v\n", t2)
+
+	// num でjoinして持ってくる
 
 }
 
