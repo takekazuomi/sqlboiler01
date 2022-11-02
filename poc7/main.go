@@ -35,7 +35,7 @@ func main() {
 	//	INSERT INTO `users` (`name`,`memo`,`created_at`,`updated_at`) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE `name` = VALUES(`name`),`memo` = VALUES(`memo`),`created_at` = VALUES(`created_at`),`updated_at` = VALUES(`updated_at`)
 	// [taro  2022-11-01 23:44:22.878110492 +0000 UTC 2022-11-01 23:44:22.878110492 +0000 UTC]
 	u := &models.User{
-		Name: "taro",
+		Name: "taro jiro",
 		Memo: "",
 	}
 
@@ -69,6 +69,8 @@ func main() {
 	err = u.Reload(ctx, db)
 	dieIf(err)
 	fmt.Printf("5 reload\tuser ID:%v, Name:%q, Memo:%q, %v, %v\n", u.ID, u.Name, u.Memo, u.CreatedAt, u.UpdatedAt)
+
+	// read all
 
 }
 
