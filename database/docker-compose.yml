@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   db:
     image: mysql:8.0.29
@@ -25,6 +23,11 @@ services:
     restart: always
     networks:
       - backend
+    healthcheck:
+      test: ["CMD", "mysql", "-uroot", '-p${MYSQL_ROOT_PASSWORD}', "-e", "SELECT NOW()"]
+      interval: 5s
+      timeout: 5s
+      retries: 5   
 
 networks:
   backend:
