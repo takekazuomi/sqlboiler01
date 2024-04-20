@@ -7,15 +7,17 @@ import (
 	"database/sql"
 	"fmt"
 	"os"
+	"strconv"
+	"time"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/oklog/ulid/v2"
-	"github.com/takekazuomi/sqlboiler01/poc5/gen/models"
+	"github.com/takekazuomi/sqlboiler01/poc8/gen/models"
+	"github.com/volatiletech/null/v8"
 	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 func main() {
-	boil.DebugMode = true
+	//boil.DebugMode = true
 	ctx := context.Background()
 
 	dsn, ok := os.LookupEnv("DSN")
@@ -29,32 +31,53 @@ func main() {
 
 	fmt.Println("connected")
 
-	ulid := newULID()
-	fmt.Printf("ulid: %s\n", ulid)
-
-	t := &models.Table1{
-		ID: ulid,
+	u := &models.User{
+		Name: "foo",
 	}
 
-	// データ作る
-	err = t.Insert(ctx, db, boil.Infer())
+	err = u.Insert(ctx, db, boil.Infer())
 	dieIf(err)
 
-	t1, err := models.Table1s(models.Table1Where.ID.EQ(ulid)).One(ctx, db)
+	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixNano(), u.UpdatedAt.UnixNano(), nullTimeUnixNano(u.DeletedAt))
+
+	err = u.Reload(ctx, db)
 	dieIf(err)
-	fmt.Printf("t1: %#v\n", t1)
 
-	// 存在しないデータをOneする
-	ulid2 := newULID()
-	fmt.Printf("ulid2: %s\n", ulid)
+	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixNano(), u.UpdatedAt.UnixNano(), nullTimeUnixNano(u.DeletedAt))
+	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixMicro(), u.UpdatedAt.UnixMicro(), nullTimeUnixNano(u.DeletedAt))
+	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.Unix(), u.UpdatedAt.Unix(), nullTimeUnixNano(u.DeletedAt))
 
-	t2, err := models.Table1s(models.Table1Where.ID.EQ(ulid2)).One(ctx, db)
-	fmt.Printf("t2: %#v. err:%v\n", t2, err)
+	// roundの確認
+	// 1668122405569040000
+	// 1668122405569040
+	// 1668122405
+	// 169040000
+	// 100
+	sec := int64(1668122405)
+	nsec := int64(100)
 
-	// 存在しないデータをAllする
-	t3, err := models.Table1s(models.Table1Where.ID.EQ(ulid2)).All(ctx, db)
-	fmt.Printf("t3: %#v. err:%v\n", t3, err)
+	for i, j := 0, int64(0); i < 10; i++ {
+		u := &models.User{
+			Name:      "foo " + strconv.Itoa(i),
+			CreatedAt: time.Unix(sec, j),
+		}
+		err = u.Insert(ctx, db, boil.Infer())
+		dieIf(err)
+		err = u.Reload(ctx, db)
+		dieIf(err)
 
+		// MySQLでは、datetime(6)としたときに、micro secでroundされる
+		// https://dev.mysql.com/doc/refman/8.0/en/fractional-seconds.html#:~:text=Inserting%20a%20TIME%2C%20DATE%2C%20or%20TIMESTAMP%20value%20with%20a%20fractional%20seconds%20part%20into%20a%20column%20of%20the%20same%20type%20but%20having%20fewer%20fractional%20digits%20results%20in%20rounding.%20Consider%20a%20table%20created%20and%20populated%20as%20follows%3A
+		fmt.Printf("%v: %v, %v, %v\n", j, u.ID, u.CreatedAt.UnixNano(), u.CreatedAt.Round(time.Microsecond).UnixMicro())
+		j += nsec
+	}
+}
+
+func nullTimeUnixNano(t null.Time) int64 {
+	if !t.Valid {
+		return 0
+	}
+	return t.Time.UnixNano()
 }
 
 func dieFalse(ok bool, msg string) {
@@ -67,8 +90,4 @@ func dieIf(err error) {
 	if err != nil {
 		panic(err)
 	}
-}
-
-func newULID() ulid.ULID {
-	return ulid.MustNew(ulid.Now(), ulid.DefaultEntropy())
 }
