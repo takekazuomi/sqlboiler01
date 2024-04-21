@@ -1,0 +1,2 @@
+export MYSQL_ROOT_PASSWORD=mysql
+export MYSQL_PASSWORD=dbpass

@@ -27,6 +27,6 @@ clean: down
 	rm -rf database/mysql/data/*
 
 mysql-client:	## connet mysql from mysql cli
-	docker compose -f database/docker-compose.yml exec db /bin/bash -c "mysql -u root -p -D db"
+	docker compose -f database/docker-compose.yml exec db /bin/bash -c "mysql -u root -p$${MYSQL_ROOT_PASSWORD} -D db"
 
 # internal targets
