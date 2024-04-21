@@ -43,9 +43,9 @@ func main() {
 	err = u.Reload(ctx, db)
 	dieIf(err)
 
-	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixNano(), u.UpdatedAt.UnixNano(), nullTimeUnixNano(u.DeletedAt))
-	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixMicro(), u.UpdatedAt.UnixMicro(), nullTimeUnixNano(u.DeletedAt))
-	fmt.Printf("%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.Unix(), u.UpdatedAt.Unix(), nullTimeUnixNano(u.DeletedAt))
+	fmt.Printf("Nano:\t%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixNano(), u.UpdatedAt.UnixNano(), nullTimeUnixNano(u.DeletedAt))
+	fmt.Printf("Micro:\t%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.UnixMicro(), u.UpdatedAt.UnixMicro(), nullTimeUnixNano(u.DeletedAt))
+	fmt.Printf("Unix:\t%v, %v, %v, %v, %v\n", u.ID, u.Name, u.CreatedAt.Unix(), u.UpdatedAt.Unix(), nullTimeUnixNano(u.DeletedAt))
 
 	// roundの確認
 	// 1668122405569040000
@@ -56,7 +56,7 @@ func main() {
 	sec := int64(1668122405)
 	nsec := int64(100)
 
-	for i, j := 0, int64(0); i < 10; i++ {
+	for i, j := 0, int64(0); i < 11; i++ {
 		u := &models.User{
 			Name:      "foo " + strconv.Itoa(i),
 			CreatedAt: time.Unix(sec, j),
@@ -68,7 +68,8 @@ func main() {
 
 		// MySQLでは、datetime(6)としたときに、micro secでroundされる
 		// https://dev.mysql.com/doc/refman/8.0/en/fractional-seconds.html#:~:text=Inserting%20a%20TIME%2C%20DATE%2C%20or%20TIMESTAMP%20value%20with%20a%20fractional%20seconds%20part%20into%20a%20column%20of%20the%20same%20type%20but%20having%20fewer%20fractional%20digits%20results%20in%20rounding.%20Consider%20a%20table%20created%20and%20populated%20as%20follows%3A
-		fmt.Printf("%v: %v, %v, %v\n", j, u.ID, u.CreatedAt.UnixNano(), u.CreatedAt.Round(time.Microsecond).UnixMicro())
+		fmt.Printf("%v: %v, %v, %v, %v, %v\n", i, j, u.ID, u.CreatedAt, u.CreatedAt.UnixNano(), u.CreatedAt.Round(time.Microsecond).UnixMicro())
+		// i=5 の時に、繰り上げられて、1 micro secになる
 		j += nsec
 	}
 }
