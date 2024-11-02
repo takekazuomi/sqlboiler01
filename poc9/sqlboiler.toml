@@ -1,0 +1,10 @@
+output   = "gen/models"
+wipe     = true
+no-tests = true
+add-enum-types = true
+add-soft-deletes = true
+add-panic-variants = true
+
+[mysql]
+  blacklist = ["migrations"]
+
