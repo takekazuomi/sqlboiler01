@@ -34,4 +34,7 @@ migrate-status: ## migrate status
 	$(SQL_MIGRATE_CLI)  status --config ../dbconfig.yml
 
 
+bench:	## go test -bench
+	go test -bench . -benchmem -benchtime 10s -count=1 -cpu 8 -cpuprofile=cpu.prof -memprofile=mem.prof
+
 # internal targets
