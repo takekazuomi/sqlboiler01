@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/aarondl/null/v8"
+	"github.com/aarondl/sqlboiler/v4/boil"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/takekazuomi/sqlboiler01/poc8/gen/models"
-	"github.com/volatiletech/null/v8"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 )
 
 func main() {

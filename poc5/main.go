@@ -12,7 +12,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/oklog/ulid/v2"
 	"github.com/takekazuomi/sqlboiler01/poc5/gen/models"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 func main() {

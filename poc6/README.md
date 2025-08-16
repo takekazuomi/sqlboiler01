@@ -1,3 +1,3 @@
 # qm
 
-https://github.com/volatiletech/sqlboiler#query-mod-system
+https://github.com/aarondl/sqlboiler#query-mod-system

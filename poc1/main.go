@@ -9,12 +9,12 @@ import (
 	"os"
 	"time"
 
+	"github.com/aarondl/null/v8"
+	"github.com/aarondl/sqlboiler/v4/boil"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/oklog/ulid/v2"
 	"github.com/takekazuomi/sqlboiler01/poc1/gen/models"
 	pb "github.com/takekazuomi/sqlboiler01/poc1/pkg/apis/message/v1"
-	"github.com/volatiletech/null/v8"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 

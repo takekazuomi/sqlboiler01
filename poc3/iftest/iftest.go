@@ -5,7 +5,7 @@ import (
 	"database/sql"
 
 	"github.com/takekazuomi/sqlboiler01/poc3/gen/models"
-	"github.com/volatiletech/sqlboiler/v4/boil"
+	"github.com/aarondl/sqlboiler/v4/boil"
 )
 
 type Accessor[K comparable, V any] interface {

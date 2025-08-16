@@ -1,6 +1,6 @@
 # Using SQLBoiler
 
-https://github.com/volatiletech/sqlboiler#sqlboiler
+https://github.com/aarondl/sqlboiler#sqlboiler
 
 Introduction to SQLBoiler
 

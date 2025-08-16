@@ -8,13 +8,13 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/aarondl/sqlboiler/v4/boil"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/oklog/ulid/v2"
 	"github.com/takekazuomi/sqlboiler01/poc6/gen/models"
-	"github.com/volatiletech/sqlboiler/v4/boil"
 
 	// Dot import so we can access query mods directly instead of prefixing with "qm."
-	. "github.com/volatiletech/sqlboiler/v4/queries/qm"
+	. "github.com/aarondl/sqlboiler/v4/queries/qm"
 )
 
 func main() {
@@ -128,7 +128,7 @@ func main() {
 	Load(models.PilotRels.Languages, models.LanguageWhere.Language.EQ("english"))
 
 	// Relationships に書いてあった
-	// https://github.com/volatiletech/sqlboiler#relationships
+	// https://github.com/aarondl/sqlboiler#relationships
 
 	// 遅いパターン
 	// 飛行機を操縦できるパイロットを全部探す。これだと、

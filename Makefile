@@ -30,6 +30,6 @@ mysql-client:	## connet mysql from mysql cli
 	docker compose -f database/docker-compose.yml exec db /bin/bash -c "mysql -u root -p$${MYSQL_ROOT_PASSWORD} -D db"
 
 deps:	## go install tools
-	./scripts/install-deps.sh
+	GOBIN=$${PWD}/tmp/bin ./scripts/install-deps.sh
 
 # internal targets
